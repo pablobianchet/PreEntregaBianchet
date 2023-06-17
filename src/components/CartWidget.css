@@ -1,0 +1,16 @@
+.cart-widget {
+  display: flex;
+  align-items: center;
+}
+
+.cart-widget i {
+  margin-right: 5px;
+}
+
+.cart-count {
+  background-color: #444444;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
