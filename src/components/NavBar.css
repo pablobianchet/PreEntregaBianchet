@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #b5b5b55a;
+  background-color: #ede9e9;
   padding: 20px;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .links a {
-  color: #000000;
+  color: #5d5b5b;
   text-decoration: none;
   margin-left: 20px;
   font-size: 16px;
@@ -28,20 +28,26 @@
   color: #aaa;
 }
 
-.cart-widget {
+.burger-button {
+  display: none;
+  background: none;
+
+  color: #1a1919;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.links.show {
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
-.cart-widget i {
-  margin-right: 5px;
-}
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
 
-.cart-count {
-  background-color: #ff0000;
-  color: #fff;
-  font-size: 12px;
-  padding: 2px 5px;
-  border-radius: 50%;
-  margin-left: 5px;
+  .burger-button {
+    display: block;
+  }
 }
