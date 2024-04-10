@@ -117,7 +117,19 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  size: "large",
+                  border: "none",
+                  "&:hover": {
+                    color: "grey", // Cambia color al hover
+                  },
+                  "&:focus": {
+                    outline: "none", // Elimina el contorno al hacer clic
+                  },
+                }}
               >
                 {page}
               </Button>
@@ -126,7 +138,10 @@ function ResponsiveAppBar() {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton
+                onClick={handleOpenUserMenu}
+                sx={{ p: 0, "&:focus": { outline: "none" } }}
+              >
                 <CartWidget />
               </IconButton>
             </Tooltip>
@@ -148,7 +163,12 @@ function ResponsiveAppBar() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography
+                    textAlign="center"
+                    sx={{ "&:focus": { outline: "none" } }}
+                  >
+                    {setting}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
